@@ -19,7 +19,7 @@ export const SolarHistogram = () => {
     }, [])
     
 
-    const options = { fillColor: '#FFFFFF', strokeColor: '#0000FF' };
+    const options = { fillColor: '#059669', strokeColor: '#059669' };
     return(
         <>
             <div>
