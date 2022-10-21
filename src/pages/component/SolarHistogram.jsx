@@ -3,9 +3,6 @@ import Histogram from 'react-chart-histogram';
 
 export const SolarHistogram = ({dataX, dataY}) => {
 
-
-    
-
     const options = { fillColor: '#059669', strokeColor: '#059669' };
     return(
         <>

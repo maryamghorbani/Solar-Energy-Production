@@ -2,6 +2,7 @@ import { DateInput } from "../component/DateInput"
 import { SolarHistogram } from "../component/SolarHistogram"
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { formatDateTime } from "../../utils/utils";
 
 export const HomePage = () => {
     const [dataX, setDataX] = useState([]);
@@ -15,8 +16,8 @@ export const HomePage = () => {
             var ed = new Date();
             sd.setHours(sd.getHours() - 4);
             ed.setHours(ed.getHours() + 4);
-            setStartDate(sd.toISOString());
-            setEndDate(ed.toISOString());
+            setStartDate(formatDateTime(sd));
+            setEndDate(formatDateTime(ed));
         }else{
             axios.get(`https://dashboard.elering.ee/api/system/with-plan?start=${startDate}&end=${endDate}`)
             .then(function (response) {

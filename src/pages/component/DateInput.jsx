@@ -1,14 +1,13 @@
 import { DatePicker, Space } from 'antd';
 import moment from 'moment';
+import {formatDateTime} from "../../utils/utils";
 
 export const DateInput = ({setStartDate, setEndDate, startDate, endDate}) => {
     const { RangePicker } = DatePicker;
 
     const setDate = (e, dateString) => {
-        const startDate = e[0].utc().format();
-        const endDate = e[1].utc().format();
-        setStartDate(startDate);
-        setEndDate(endDate);
+        setStartDate(formatDateTime(e[0].toDate()));
+        setEndDate(formatDateTime(e[1].toDate()));
     }
 
     return(
