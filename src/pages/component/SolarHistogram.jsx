@@ -6,7 +6,7 @@ export const SolarHistogram = () => {
     const [dataX, setDataX] = useState([]);
     const [dataY, setDataY] = useState([]);
     useEffect(() => {
-        axios.get('https://dashboard.elering.ee/api/system/with-plan?start=2022-10-20T00:00Z&end=2022-10-22T00:00Z')
+        axios.get('https://dashboard.elering.ee/api/system/with-plan?start=2022-10-21T00:00Z&end=2022-10-22T00:00Z')
       .then(function (response) {
         const mergeResult = [...response.data.data.real, ...response.data.data.plan];
         setDataX(mergeResult.map(item => item.timestamp));
@@ -18,8 +18,7 @@ export const SolarHistogram = () => {
 
     }, [])
     
-    // const labels = ['2016', '2017', '2018'];
-    // const data = [324, 45, 672];
+
     const options = { fillColor: '#FFFFFF', strokeColor: '#0000FF' };
     return(
         <>
@@ -27,8 +26,8 @@ export const SolarHistogram = () => {
                 <Histogram
                     xLabels={dataX}
                     yValues={dataY}
-                    width='400'
-                    height='200'
+                    width='1100'
+                    height='900'
                     options={options}
                 />
             </div>
