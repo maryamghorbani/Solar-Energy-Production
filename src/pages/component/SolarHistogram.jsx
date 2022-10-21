@@ -22,7 +22,7 @@ export const SolarHistogram = () => {
     const options = { fillColor: '#059669', strokeColor: '#059669' };
     return(
         <>
-            <div>
+            <div className="flex justify-center py-24">
                 <Histogram
                     xLabels={dataX}
                     yValues={dataY}

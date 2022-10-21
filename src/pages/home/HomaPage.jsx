@@ -3,7 +3,7 @@ import { SolarHistogram } from "../component/SolarHistogram"
 export const HomePage = () => {
     return(
         <>
-            <h1 className="text-3xl text-emerald-600 font-bold">Solar Energy Production</h1>
+            <h1 className="text-3xl text-emerald-600 font-bold py-10">Solar Energy Production</h1>
             <SolarHistogram />
         </>
     )
